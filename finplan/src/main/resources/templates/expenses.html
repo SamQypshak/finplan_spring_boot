@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>Фин.план</title>
+
+</head>
+
+<body>
+<H2>Расходы</H2>
+<table style="border-collapse: collapse; width: 100%; height: 36px;" border="1">
+    <tbody>
+    <tr style="height: 18px;">
+        <td style="width: 15%; height: 18px;"><strong>Код</strong></td>
+        <td style="width: 44%; height: 18px;"><strong>Наименование</strong></td>
+        <td style="width: 33.3333%; height: 18px;"><strong>Сумма</strong></td>
+    </tr>
+    <tr th:each="row : ${list}" style="height: 18px;">
+        <td th:utext="${row.code}" style="width: 33.3333%; height: 18px;"></td>
+        <td th:utext="${row.name}" style="width: 33.3333%; height: 18px;"></td>
+        <td th:utext="${row.getSumString()}" style="width: 33.3333%; height: 18px;"></td>
+    </tr>
+
+    <tr style="height: 18px;">
+        <td colspan="2" style="width: 33.3333%; height: 18px;"><strong>Итого:</strong></td>
+        <td th:utext="${totalsum}" style="width: 15.246%; height: 18px;"><strong>1000</strong></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
